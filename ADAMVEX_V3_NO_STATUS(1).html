@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADAMVEX — Ideas Into Digital</title>
+<meta name="description" content="ADAMVEX — websites, branding, editing and digital content.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg:#050505; --panel:#0b0b0b; --panel2:#111;
+  --text:#f5f5f5; --muted:#8d8d8d; --line:#222;
+  --accent:#fff; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--text); font-family:Inter,Arial,sans-serif;
+  line-height:1.5; overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:60px 60px; mask-image:linear-gradient(to bottom,#000,transparent 90%);
+}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;
+  justify-content:space-between;padding:18px 0;background:rgba(5,5,5,.78);
+  backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)
+}
+.logo{font-weight:900;letter-spacing:.14em;font-size:20px}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{text-decoration:none;color:#aaa;font-size:13px;transition:.2s}
+.navlinks a:hover{color:#fff}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 18px;border:1px solid #fff;background:#fff;color:#050505;
+  text-decoration:none;font-weight:800;font-size:12px;letter-spacing:.04em;
+  transition:.25s
+}
+.btn:hover{background:transparent;color:#fff;transform:translateY(-2px)}
+.hero{min-height:88vh;display:grid;place-items:center;position:relative;padding:110px 0 90px}
+.hero:after{
+  content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.10),transparent 65%);
+  filter:blur(20px);pointer-events:none
+}
+.hero-content{position:relative;z-index:1;text-align:center}
+.kicker{font-size:11px;letter-spacing:.35em;color:#aaa;text-transform:uppercase;margin-bottom:24px}
+h1{font-size:clamp(58px,12vw,150px);line-height:.82;letter-spacing:-.075em;font-weight:900}
+.hero h1 span{display:block;color:transparent;-webkit-text-stroke:1px #777}
+.hero-copy{max-width:610px;margin:30px auto 0;color:#999;font-size:16px}
+.ctas{display:flex;justify-content:center;gap:12px;margin-top:32px;flex-wrap:wrap}
+.ghost{background:transparent;color:#fff;border-color:#333}
+.ghost:hover{border-color:#fff}
+.scroll{margin-top:65px;color:#555;font-size:10px;letter-spacing:.3em;text-transform:uppercase}
+section{padding:105px 0;border-top:1px solid var(--line)}
+.section-top{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+.eyebrow{font-size:10px;letter-spacing:.28em;color:#666;text-transform:uppercase}
+h2{font-size:clamp(42px,7vw,82px);line-height:.88;letter-spacing:-.055em}
+.section-note{max-width:330px;color:#777;font-size:13px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
+.service{padding:30px 24px;min-height:270px;border-right:1px solid var(--line);position:relative;transition:.3s}
+.service:last-child{border-right:0}
+.service:hover{background:#101010;transform:translateY(-5px)}
+.num{font-size:10px;color:#555;letter-spacing:.2em}
+.service h3{font-size:24px;letter-spacing:-.04em;margin-top:70px}
+.service p{font-size:12px;color:#777;margin-top:12px}
+.arrow{position:absolute;right:22px;bottom:22px;font-size:18px;color:#555}
+.work-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.project{background:var(--panel);display:grid;grid-template-columns:1.4fr .8fr;min-height:300px;text-decoration:none;overflow:hidden}
+.project-visual{min-height:300px;background:
+  linear-gradient(135deg,rgba(0,0,0,.28),rgba(0,0,0,.72)),
+  url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85') center/cover;
+  position:relative}
+.project-visual:before{content:"ADAMVEX";position:absolute;inset:auto 30px 25px;font-size:clamp(40px,6vw,80px);font-weight:900;letter-spacing:-.07em;color:rgba(255,255,255,.08)}
+.project-info{padding:36px;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--line)}
+.project-info small{color:#555;letter-spacing:.2em;font-size:10px}
+.project-info h3{font-size:34px;letter-spacing:-.05em;margin:15px 0 8px}
+.project-info p{color:#777;font-size:13px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.step{padding:25px 20px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step strong{font-size:11px;color:#666;letter-spacing:.15em}
+.step h3{font-size:20px;margin:38px 0 8px}
+.step p{font-size:12px;color:#777}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.contact-copy h2{margin-top:14px}
+.contact-copy p{color:#777;max-width:470px;margin-top:22px}
+.contact-card{border:1px solid var(--line);padding:28px;background:#090909}
+.field{margin-bottom:16px}
+label{display:block;color:#666;font-size:10px;text-transform:uppercase;letter-spacing:.16em;margin-bottom:7px}
+input,select,textarea{
+  width:100%;background:#050505;color:#fff;border:1px solid #252525;
+  padding:13px;font:inherit;font-size:13px;outline:none
+}
+input:focus,select:focus,textarea:focus{border-color:#777}
+textarea{min-height:130px;resize:vertical}
+.contact-card .btn{width:100%;margin-top:4px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:#555;font-size:11px}
+.footer-row{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){
+  .navlinks a:not(.btn){display:none}
+  .services,.process{grid-template-columns:1fr 1fr}
+  .service:nth-child(2){border-right:0}
+  .service:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .project{grid-template-columns:1fr}
+  .project-info{border-left:0;border-top:1px solid var(--line)}
+  .contact{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:560px){
+  .wrap{width:min(var(--max),calc(100% - 28px))}
+  nav{padding:15px 0}
+  .hero{min-height:82vh;padding-top:80px}
+  .services,.process{grid-template-columns:1fr}
+  .service{border-right:0;border-bottom:1px solid var(--line)!important}
+  .service:last-child{border-bottom:0!important}
+  .step{border-right:0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .section-top{display:block}
+  .section-note{margin-top:20px}
+  h1{font-size:18vw}
+  section{padding:75px 0}
+  .footer-row{flex-direction:column}
+}
+</style>
+<style>.partnerships{padding:110px 6vw;background:linear-gradient(180deg,#09070d 0%,#110b19 100%);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}.partnership-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}.partnership-copy .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;opacity:.65;margin-bottom:20px}.partnership-copy h2{font-family:"Big Shoulders Display",sans-serif;font-size:clamp(58px,8vw,110px);line-height:.82;margin:0 0 30px;letter-spacing:-.025em}.partnership-copy h2 span{opacity:.42}.partnership-copy p{max-width:680px;color:rgba(255,255,255,.68);font-size:17px;line-height:1.75;margin:0 0 17px}.partnership-note{font-size:15px!important;opacity:.58}.partnership-btn{display:inline-flex;align-items:center;gap:24px;margin-top:18px;padding:17px 23px;border:1px solid rgba(255,255,255,.2);color:#fff;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;transition:.25s ease}.partnership-btn:hover{background:#fff;color:#08070b;transform:translateY(-2px)}.partnership-btn span{font-size:20px;line-height:0}.partnership-card{min-height:390px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid rgba(255,255,255,.13);background:radial-gradient(circle at 75% 20%,rgba(155,100,255,.24),transparent 35%),linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));box-shadow:0 30px 90px rgba(0,0,0,.35)}.card-label,.card-footer{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;opacity:.55}.card-icon{font-size:76px;font-weight:200;opacity:.9}.card-title{font-family:"Big Shoulders Display",sans-serif;font-size:48px;line-height:.9;letter-spacing:-.02em}@media(max-width:800px){.partnerships{padding:80px 6vw}.partnership-inner{grid-template-columns:1fr;gap:45px}.partnership-card{min-height:300px}}</style>
+
+<style>
+.location-section{padding:110px 6vw;background:#09070d;border-top:1px solid rgba(255,255,255,.08)}
+.location-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.location-copy h2{font-family:"Big Shoulders Display",sans-serif;font-size:clamp(58px,8vw,105px);line-height:.82;margin:14px 0 28px;letter-spacing:-.025em}
+.location-copy h2 span{opacity:.4}.location-copy p{max-width:600px;color:rgba(255,255,255,.64);font-size:16px;line-height:1.75}
+.location-input-row{display:flex;gap:10px;margin:28px 0 12px}
+.location-input-row input{flex:1;min-width:0;background:#0b0910;border:1px solid rgba(255,255,255,.16);padding:17px;color:#fff;font:inherit}
+.location-input-row button{background:#fff;color:#09070d;border:0;padding:0 20px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;cursor:pointer}
+.location-input-row button:hover{opacity:.85}.location-note{font-size:12px!important;opacity:.45}
+.map-frame{height:440px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:#0b0910;box-shadow:0 25px 80px rgba(0,0,0,.35)}
+.map-frame iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.1) brightness(.72)}
+.map-overlay{position:absolute;top:16px;left:16px;padding:9px 12px;background:rgba(8,7,11,.88);border:1px solid rgba(255,255,255,.12);font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.14em}
+@media(max-width:800px){.location-grid{grid-template-columns:1fr}.map-frame{height:340px}.location-input-row{flex-direction:column}.location-input-row button{height:50px}}
+</style>
+
+
+<style id="big-site-upgrade">
+/* BIGGER, MORE CINEMATIC LAYOUT — less cramped, fewer tiny sections */
+:root {
+  --section-pad: clamp(72px, 9vw, 140px);
+}
+section {
+  padding-top: var(--section-pad) !important;
+  padding-bottom: var(--section-pad) !important;
+}
+.hero, .hero-section, header.hero {
+  min-height: 82vh !important;
+  display: flex;
+  align-items: center;
+}
+.hero h1, .hero-title, .hero .display {
+  font-size: clamp(4rem, 9vw, 9rem) !important;
+  line-height: .88 !important;
+}
+.container, .wrap, .section-inner {
+  width: min(94vw, 1500px) !important;
+  max-width: 1500px !important;
+}
+.grid, .cards, .services-grid, .portfolio-grid, .package-grid {
+  gap: clamp(22px, 2.5vw, 42px) !important;
+}
+.card, .service, .package, .case-study, .process-card {
+  padding: clamp(28px, 3vw, 52px) !important;
+}
+h2, .section-title {
+  font-size: clamp(2.8rem, 5.5vw, 6rem) !important;
+  line-height: .92 !important;
+}
+.portfolio-item, .project, .case-study {
+  min-height: 420px !important;
+}
+img, .portfolio-image, .project-image {
+  min-height: 300px;
+}
+input, textarea, select, button {
+  font-size: 1rem !important;
+}
+footer {
+  padding-top: 70px !important;
+  padding-bottom: 45px !important;
+}
+@media (max-width: 700px) {
+  .hero {
+    min-height: 76vh !important;
+  }
+  .hero h1, .hero-title, .hero .display {
+    font-size: clamp(3.1rem, 15vw, 5.5rem) !important;
+  }
+  section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+}
+</style>
+
+
+<style id="av-calculator-founder">
+.av-extra-section{padding:clamp(90px,10vw,160px) 0;border-top:1px solid rgba(255,255,255,.10);background:#09090d}
+.av-extra-inner{width:min(94vw,1500px);margin:auto}
+.av-extra-kicker{font-family:monospace;letter-spacing:.16em;font-size:.72rem;opacity:.58;margin-bottom:22px}
+.av-extra-head{display:flex;justify-content:space-between;gap:50px;align-items:flex-end;margin-bottom:55px}
+.av-extra-head h2,.av-founder h2{font-size:clamp(3.5rem,7vw,7.5rem);line-height:.82;margin:0;letter-spacing:-.055em}
+.av-extra-head h2 span,.av-founder h2 span{opacity:.38}
+.av-extra-head p{max-width:470px;line-height:1.7;opacity:.65;margin:0}
+.av-calc{display:grid;grid-template-columns:1.5fr .8fr;gap:28px}
+.av-calc-options{display:grid;gap:12px}
+.av-option{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:25px 28px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.025);cursor:pointer;transition:.2s}
+.av-option:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.3)}
+.av-option input{width:20px;height:20px;accent-color:#fff}
+.av-option span{display:grid;gap:5px}.av-option small{opacity:.5}
+.av-option strong{font-family:monospace;white-space:nowrap}
+.av-calc-total{padding:38px;border:1px solid rgba(255,255,255,.16);background:#111117;display:flex;flex-direction:column;justify-content:center}
+.av-calc-total>span{font:11px monospace;letter-spacing:.12em;opacity:.5}
+#avTotal{font-size:clamp(3rem,5vw,5rem);font-weight:700;letter-spacing:-.06em;margin:14px 0}
+.av-calc-total p{opacity:.45;font-size:.85rem;line-height:1.5}
+.av-calc-total button{margin-top:22px;padding:17px 20px;border:0;background:#fff;color:#08080b;font-weight:800;cursor:pointer}
+.av-founder{background:#0c0c12}
+.av-founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:10vw;align-items:center}
+.av-founder-copy{max-width:650px;line-height:1.8;opacity:.72}
+.av-founder-lead{font-size:clamp(1.5rem,2.5vw,2.4rem);line-height:1.2;color:#fff;opacity:1}
+.av-founder-sign{margin-top:40px;font:12px monospace;letter-spacing:.15em;color:#fff;opacity:.8}
+@media(max-width:800px){
+ .av-extra-head,.av-founder-grid{grid-template-columns:1fr;display:grid}
+ .av-calc{grid-template-columns:1fr}
+ .av-option{grid-template-columns:auto 1fr}
+ .av-option strong{grid-column:2}
+}
+</style>
+
+
+<style id="av-cofounder-style">
+.av-cofounder-card{margin-top:45px;padding:24px 26px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.025);max-width:520px}
+.av-cofounder-label{font:10px monospace;letter-spacing:.16em;opacity:.48;margin-bottom:9px}
+.av-cofounder-name{font-size:clamp(1.5rem,3vw,2.6rem);font-weight:800;letter-spacing:-.04em}
+.av-cofounder-role{font:10px monospace;letter-spacing:.12em;opacity:.45;margin-top:8px}
+</style>
+
+
+<style id="av-team-style">
+.av-team-head{display:grid;grid-template-columns:1fr 1fr;gap:10vw;align-items:end;margin-bottom:55px}
+.av-team-head h2{font-size:clamp(3.5rem,7vw,7.5rem);line-height:.82;margin:0;letter-spacing:-.055em}
+.av-team-head h2 span{opacity:.38}
+.av-team-head p{max-width:520px;line-height:1.7;opacity:.65;margin:0}
+.av-team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.av-team-card{min-height:250px;padding:28px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.025);display:flex;flex-direction:column;justify-content:space-between;transition:.25s ease}
+.av-team-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.045)}
+.av-team-number{font:11px monospace;opacity:.38}
+.av-team-name{font-size:clamp(1.3rem,2.3vw,2.1rem);font-weight:800;letter-spacing:-.035em}
+.av-team-role{font:10px monospace;letter-spacing:.14em;opacity:.45}
+@media(max-width:900px){.av-team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.av-team-head{grid-template-columns:1fr;gap:30px}.av-team-grid{grid-template-columns:1fr 1fr}.av-team-card{min-height:190px;padding:22px}}
+</style>
+
+
+<style id="adamvex-premium-3d">
+.av3d-section{padding:clamp(90px,10vw,160px) 0;border-top:1px solid rgba(255,255,255,.09);background:#08080c;overflow:hidden}
+.av3d-section.av-dark{background:#0d0d12}.av3d-inner{width:min(94vw,1500px);margin:auto}
+.av3d-kicker{font:11px monospace;letter-spacing:.18em;opacity:.48;margin-bottom:22px}
+.av3d-copy h2,.av3d-heading h2,.av-faq-layout h2{font-size:clamp(3.6rem,7vw,7.5rem);line-height:.82;letter-spacing:-.06em;margin:0}
+.av3d-copy h2 span,.av3d-heading h2 span,.av-faq-layout h2 span{opacity:.35}
+.av3d-copy p{max-width:430px;line-height:1.7;opacity:.6;margin-top:28px}
+.av3d-inner.av3d-copy{position:relative}
+.av3d-stage{height:620px;position:relative;display:grid;place-items:center;perspective:1200px;margin-top:-35px}
+.av3d-stage:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(150,120,255,.10);filter:blur(70px)}
+.av-cube{width:220px;height:220px;position:relative;transform-style:preserve-3d;animation:avCube 13s linear infinite}
+.av-cube .face{position:absolute;inset:0;display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.025));font:800 27px monospace;letter-spacing:.08em;backface-visibility:hidden;box-shadow:inset 0 0 50px rgba(255,255,255,.025)}
+.av-cube .front{transform:translateZ(110px)}.av-cube .back{transform:rotateY(180deg) translateZ(110px)}
+.av-cube .right{transform:rotateY(90deg) translateZ(110px)}.av-cube .left{transform:rotateY(-90deg) translateZ(110px)}
+.av-cube .top{transform:rotateX(90deg) translateZ(110px)}.av-cube .bottom{transform:rotateX(-90deg) translateZ(110px)}
+@keyframes avCube{0%{transform:rotateX(-15deg) rotateY(0deg) rotateZ(0deg)}50%{transform:rotateX(15deg) rotateY(180deg) rotateZ(4deg)}100%{transform:rotateX(-15deg) rotateY(360deg) rotateZ(0deg)}}
+.av-orbit{position:absolute;border:1px solid rgba(255,255,255,.16);border-radius:50%;width:390px;height:150px;transform-style:preserve-3d;animation:avOrbit 8s ease-in-out infinite}
+.orbit-a{transform:rotateX(70deg) rotateZ(12deg)}.orbit-b{transform:rotateX(70deg) rotateZ(-55deg);animation-delay:-4s}
+@keyframes avOrbit{0%,100%{transform:rotateX(70deg) rotateZ(12deg) scale(1)}50%{transform:rotateX(70deg) rotateZ(192deg) scale(1.08)}}
+.orbit-b{animation-name:avOrbitB}@keyframes avOrbitB{0%,100%{transform:rotateX(70deg) rotateZ(-55deg) scale(1)}50%{transform:rotateX(70deg) rotateZ(125deg) scale(1.08)}}
+.av3d-label{position:absolute;bottom:25px;font:10px monospace;letter-spacing:.16em;opacity:.4}
+.av3d-section>.av3d-inner:first-child{display:grid;grid-template-columns:.8fr 1.2fr;gap:5vw;align-items:center}
+.av3d-heading{display:grid;grid-template-columns:1fr .7fr;gap:5vw;align-items:end;margin-bottom:55px}.av3d-heading p{opacity:.55;line-height:1.6}
+.av-pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.av-pack{padding:36px;border:1px solid rgba(255,255,255,.11);min-height:440px;display:flex;flex-direction:column;transition:.25s}.av-pack:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.3)}.av-pack.featured{background:#f4f4f2;color:#0b0b0e;transform:translateY(-12px)}.av-pack.featured:hover{transform:translateY(-19px)}.av-pack>span{font:10px monospace;letter-spacing:.13em;opacity:.5}.av-pack h3{font-size:2rem;margin:55px 0 10px;letter-spacing:-.04em}.av-pack p{opacity:.6;line-height:1.6}.av-pack ul{padding:0;margin:22px 0 30px;list-style:none;line-height:2;opacity:.7}.av-pack button{margin-top:auto;padding:15px;background:transparent;color:inherit;border:1px solid currentColor;cursor:pointer;font-weight:700}
+.av-faq-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:10vw}.av-faq{border-top:1px solid rgba(255,255,255,.12)}.av-faq details{border-bottom:1px solid rgba(255,255,255,.12);padding:24px 0}.av-faq summary{cursor:pointer;font-size:1.15rem;font-weight:650;list-style:none}.av-faq summary::-webkit-details-marker{display:none}.av-faq summary:after{content:"+";float:right;opacity:.45}.av-faq details[open] summary:after{content:"−"}.av-faq p{max-width:700px;line-height:1.7;opacity:.55;margin:15px 30px 0 0}
+@media(max-width:900px){.av3d-section>.av3d-inner:first-child,.av3d-heading,.av-faq-layout{grid-template-columns:1fr}.av3d-stage{height:480px;margin-top:10px}.av-pack-grid{grid-template-columns:1fr}.av-pack.featured{transform:none}.av-pack.featured:hover{transform:translateY(-7px)}}
+@media(prefers-reduced-motion:reduce){.av-cube,.av-orbit{animation:none}}
+</style>
+
+
+<style id="av-ultra-pricing">
+.av-price{font-size:2.1rem;font-weight:800;letter-spacing:-.04em;margin:12px 0 0}
+.av-pack-grid-four{grid-template-columns:repeat(4,1fr)!important}
+.av-pack-grid-four .av-pack{min-height:500px}
+.av-ultra{position:relative;overflow:hidden;background:linear-gradient(145deg,#11111a,#09090d)}
+.av-ultra:before{content:"";position:absolute;width:220px;height:220px;right:-80px;top:-80px;border-radius:50%;background:rgba(170,140,255,.13);filter:blur(35px)}
+.av-ultra-note{margin-top:25px;padding:18px 22px;border:1px solid rgba(255,255,255,.09);font-size:.85rem;line-height:1.6;opacity:.58}
+.av-ultra-note b{color:#fff;opacity:.95;letter-spacing:.08em}
+@media(max-width:1150px){.av-pack-grid-four{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:650px){.av-pack-grid-four{grid-template-columns:1fr!important}.av-pack-grid-four .av-pack{min-height:auto}}
+</style>
+
+
+<style id="av-ultra-demo-style">
+.av-ultra-showcase{background:#07070a}
+.av-ultra-demo{height:560px;position:relative;display:grid;place-items:center;perspective:1100px;margin:20px 0 55px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:radial-gradient(circle at center,rgba(150,130,255,.09),transparent 42%)}
+.av-demo-orb{width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#fff,rgba(255,255,255,.14) 12%,rgba(100,90,150,.08) 45%,transparent 72%);box-shadow:0 0 80px rgba(190,170,255,.22);animation:avOrb 5s ease-in-out infinite}
+@keyframes avOrb{50%{transform:translateY(-18px) scale(1.06)}}
+.av-demo-ring{position:absolute;width:430px;height:170px;border:1px solid rgba(255,255,255,.16);border-radius:50%;transform-style:preserve-3d}
+.r1{transform:rotateX(70deg) rotateZ(8deg);animation:avR1 10s linear infinite}.r2{transform:rotateX(70deg) rotateZ(62deg);animation:avR2 13s linear infinite}.r3{transform:rotateX(70deg) rotateZ(-38deg);animation:avR3 16s linear infinite}
+@keyframes avR1{to{transform:rotateX(70deg) rotateZ(368deg)}}@keyframes avR2{to{transform:rotateX(70deg) rotateZ(-298deg)}}@keyframes avR3{to{transform:rotateX(70deg) rotateZ(322deg)}}
+.av-demo-core{position:absolute;display:grid;place-items:center;gap:5px;font-weight:900;letter-spacing:.1em}.av-demo-core span{font-size:42px}.av-demo-core small{font:9px monospace;opacity:.5;letter-spacing:.25em}
+.av-demo-caption{position:absolute;bottom:22px;font:10px monospace;letter-spacing:.18em;opacity:.35}
+.av-ultra-points{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.1)}
+.av-ultra-points>div{padding:25px;border-right:1px solid rgba(255,255,255,.1);display:grid;gap:8px}.av-ultra-points>div:last-child{border-right:0}.av-ultra-points b{font:10px monospace;opacity:.35}.av-ultra-points span{font-weight:800;letter-spacing:.08em}.av-ultra-points small{line-height:1.5;opacity:.5}
+@media(max-width:800px){.av-ultra-points{grid-template-columns:1fr 1fr}.av-ultra-points>div:nth-child(2){border-right:0}.av-ultra-demo{height:430px}.av-demo-ring{width:300px;height:120px}}
+@media(prefers-reduced-motion:reduce){.av-demo-orb,.av-demo-ring{animation:none}}
+</style>
+
+<style id="av-upgrade">
+html{scroll-behavior:smooth}body{overflow-x:hidden}
+#avProgress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#8c52ff,#d7bfff);z-index:99999}
+.avReveal{opacity:0;transform:translateY(28px);transition:.8s ease}.avReveal.show{opacity:1;transform:none}
+.avTilt{transform-style:preserve-3d;transition:transform .18s ease,box-shadow .25s ease}.avTilt:hover{box-shadow:0 25px 70px rgba(120,70,255,.2)}
+.av3d{position:relative;min-height:420px;display:grid;place-items:center;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:radial-gradient(circle,rgba(120,70,255,.18),transparent 55%),rgba(255,255,255,.025)}
+.avOrb{width:145px;height:145px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff, #a879ff 8%,#4b20a8 38%,#120821 72%);box-shadow:0 0 60px rgba(140,80,255,.5);animation:avFloat 5s ease-in-out infinite}
+.avRing{position:absolute;border:1px solid rgba(190,150,255,.45);border-radius:50%;transform:rotateX(70deg) rotateZ(15deg);animation:avSpin 10s linear infinite}.r1{width:250px;height:95px}.r2{width:340px;height:130px;animation-duration:15s;animation-direction:reverse}.r3{width:430px;height:165px;animation-duration:21s}
+@keyframes avSpin{to{transform:rotateX(70deg) rotateZ(375deg)}}@keyframes avFloat{50%{transform:translateY(-12px)}}
+.avSticky{position:fixed;right:20px;bottom:20px;z-index:9998;padding:13px 18px;border-radius:999px;background:#17121f;border:1px solid rgba(255,255,255,.15);text-decoration:none}
+@media(max-width:700px){.av3d{min-height:330px}.avOrb{width:105px;height:105px}.r1{width:190px;height:72px}.r2{width:260px;height:98px}.r3{width:330px;height:124px}}
+</style>
+<style id="av-level-fix">
+/* Full-width pricing / level cards */
+#packages .grid,
+.packages .grid,
+.pricing-grid,
+.package-grid {
+  width: 100% !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+#packages .card,
+.packages .card,
+.pricing-grid > *,
+.package-grid > * {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 1000px) {
+  #packages .grid,
+  .packages .grid,
+  .pricing-grid,
+  .package-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+}
+@media (max-width: 620px) {
+  #packages .grid,
+  .packages .grid,
+  .pricing-grid,
+  .package-grid { grid-template-columns: 1fr !important; }
+}
+</style>
+
+<style id="av-fourth-card-fix">
+/* Make all four Choose Your Level cards fit completely */
+.av-pack-grid.av-pack-grid-four {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  width: 100% !important;
+  gap: 15px !important;
+}
+.av-pack-grid.av-pack-grid-four .av-pack {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 1100px) {
+  .av-pack-grid.av-pack-grid-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 650px) {
+  .av-pack-grid.av-pack-grid-four {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>
+
+<style id="adamvex-complete-upgrade">
+/* ADAMVEX COMPLETE UX UPGRADE */
+.avx-launch{position:fixed;inset:0;z-index:100000;background:#08060c;display:grid;place-items:center;transition:opacity .7s,visibility .7s}.avx-launch.hide{opacity:0;visibility:hidden;pointer-events:none}
+.avx-launch-logo{font-size:clamp(2rem,8vw,6rem);font-weight:900;letter-spacing:.16em}.avx-launch-logo span{display:block;font-size:.28em;letter-spacing:.45em;opacity:.55;text-align:center;margin-top:12px}
+.avx-section{padding:80px 0}.avx-label{font-size:.72rem;letter-spacing:.18em;opacity:.55;margin-bottom:14px}.avx-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.avx-card{border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:28px;background:rgba(255,255,255,.025);box-sizing:border-box}.avx-card h3{margin:12px 0 8px}.avx-card p{opacity:.65}
+.avx-pill{display:inline-flex;align-items:center;padding:7px 11px;border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:.7rem;letter-spacing:.1em}
+.avx-tilt{transform-style:preserve-3d;transition:transform .18s ease,box-shadow .25s ease}.avx-tilt:hover{box-shadow:0 25px 70px rgba(110,70,255,.18)}
+.avx-chat{position:fixed;right:22px;bottom:78px;width:min(380px,calc(100vw - 30px));z-index:9000;border:1px solid rgba(255,255,255,.12);border-radius:22px;background:rgba(12,9,17,.94);backdrop-filter:blur(18px);box-shadow:0 20px 70px rgba(0,0,0,.5);padding:20px;display:none}.avx-chat.open{display:block}.avx-chat textarea{width:100%;min-height:100px;box-sizing:border-box;border:1px solid rgba(255,255,255,.12);border-radius:13px;background:rgba(255,255,255,.04);color:inherit;padding:12px;resize:vertical}.avx-chat button{margin-top:10px}
+.avx-chat-fab{position:fixed;right:22px;bottom:20px;z-index:9001;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:13px 18px;background:#17121f;color:inherit;cursor:pointer}
+.avx-quote{display:grid;grid-template-columns:1fr 1fr;gap:16px}.avx-quote label{display:block;font-size:.75rem;opacity:.6;margin-bottom:7px}.avx-quote select,.avx-quote input{width:100%;box-sizing:border-box;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:inherit}.avx-total{grid-column:1/-1;font-size:1.5rem;padding-top:10px}
+.avx-globe{min-height:350px;display:grid;place-items:center;border-radius:28px;border:1px solid rgba(255,255,255,.1);background:radial-gradient(circle,rgba(120,70,255,.18),transparent 55%)}.avx-globe-core{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff,rgba(160,110,255,.8) 5%,rgba(80,35,170,.85) 35%,#0d0817 75%);box-shadow:0 0 70px rgba(130,75,255,.35);position:relative}.avx-globe-core:after{content:"";position:absolute;inset:-35px;border:1px solid rgba(180,140,255,.4);border-radius:50%;transform:rotateX(68deg);animation:avxSpin 12s linear infinite}@keyframes avxSpin{to{transform:rotateX(68deg) rotateZ(360deg)}}
+.avx-case{overflow:hidden;min-height:260px;position:relative}.avx-case:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(120,70,255,.22),transparent 60%);pointer-events:none}.avx-case>*{position:relative}
+@media(max-width:800px){.avx-grid{grid-template-columns:1fr}.avx-quote{grid-template-columns:1fr}.avx-section{padding:58px 0}}
+</style>
+
+<style id="adamvex-api-free-ai">
+.avx-ai-section{position:relative}
+.avx-ai-head{display:flex;justify-content:space-between;gap:30px;align-items:flex-end;margin:18px 0 30px}
+.avx-ai-head h2{font-size:clamp(2.7rem,6vw,6rem);line-height:.9;margin:0}
+.avx-ai-head h2 span{opacity:.55}
+.avx-ai-head p{max-width:650px;opacity:.65;line-height:1.7;margin:18px 0 0}
+.avx-ai-badge{min-width:105px;height:105px;border:1px solid rgba(255,255,255,.16);border-radius:50%;display:grid;place-items:center;text-align:center;font-size:.65rem;letter-spacing:.14em;opacity:.8}
+.avx-ai-badge strong{font-size:1.4rem;letter-spacing:0}
+.avx-ai-box{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 25px 80px rgba(0,0,0,.25)}
+.avx-ai-prompt{padding:8px}
+.avx-ai-prompt label{display:block;font-size:.72rem;letter-spacing:.13em;opacity:.55;margin-bottom:9px}
+#avxIdeaFree{width:100%;min-height:170px;resize:vertical;box-sizing:border-box;padding:17px;border-radius:17px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.25);color:inherit;font:inherit;outline:none}
+.avx-ai-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}
+#avxAiBuild{border:0;border-radius:999px;padding:14px 20px;background:#fff;color:#0b0910;font-weight:800;cursor:pointer}
+.avx-ai-example{border:1px solid rgba(255,255,255,.14);background:transparent;color:inherit;border-radius:999px;padding:13px 16px;cursor:pointer}
+.avx-ai-result{min-height:220px;border-radius:20px;padding:22px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.08);display:flex;gap:14px;align-items:flex-start;line-height:1.65}
+.avx-ai-result p{margin:7px 0 0;opacity:.68}
+.avx-ai-result ul{margin:10px 0 0;padding-left:18px}
+.avx-ai-dot{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 18px rgba(255,255,255,.7);margin-top:8px;flex:none}
+@media(max-width:800px){.avx-ai-head{align-items:flex-start}.avx-ai-badge{min-width:82px;height:82px}.avx-ai-box{grid-template-columns:1fr}.avx-ai-result{min-height:150px}}
+</style>
+
+</head>
+<body>
+
+<nav>
+<a href="#calculator">Calculator</a><a href="#founder">Founder</a>
+
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:center">
+    <div class="logo">ADAMVEX</div>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+        <a href="#partnerships">Partnerships</a>
+        <a href="#location">Location</a>
+      <a href="#process">Process</a>
+      <a class="btn" href="https://wa.me/918886767275?text=Hi%20ADAMVEX%2C%20I%27d%20like%20to%20start%20a%20project." target="_blank" rel="noopener">START A PROJECT ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content wrap">
+    <div class="kicker">ADAMVEX / DIGITAL CREATIVE STUDIO</div>
+    <h1>IDEAS<br><span>INTO</span><br>DIGITAL.</h1>
+    <p class="hero-copy">We build bold websites, brands and digital experiences designed to make businesses look impossible to ignore.</p>
+    <div class="ctas">
+      <a class="btn" href="#contact">LET'S BUILD ↗</a>
+      <a class="btn ghost" href="#work">VIEW OUR WORK</a>
+    </div>
+    <div class="scroll">SCROLL TO EXPLORE ↓</div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap reveal">
+    <div class="section-top">
+      <div><div class="eyebrow">01 / What we do</div><h2>BUILT<br>TO STAND OUT.</h2></div>
+      <p class="section-note">One creative partner for the digital pieces your business needs to grow.</p>
+    </div>
+    <div class="services">
+      <article class="service"><div class="num">01 — WEB</div><h3>Website<br>Development</h3><p>Fast, responsive websites built around your goals and your audience.</p><div class="arrow">↗</div></article>
+      <article class="service"><div class="num">02 — EDIT</div><h3>Video<br>Editing</h3><p>Short-form and branded edits designed to hold attention.</p><div class="arrow">↗</div></article>
+      <article class="service"><div class="num">03 — BRAND</div><h3>Branding<br>& Design</h3><p>Visual identities that make your business recognizable.</p><div class="arrow">↗</div></article>
+      <article class="service"><div class="num">04 — ADS</div><h3>Ads & Digital<br>Content</h3><p>Creative content that gives your marketing something worth clicking.</p><div class="arrow">↗</div></article>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap reveal">
+    <div class="section-top">
+      <div><div class="eyebrow">02 / Selected work</div><h2>THE<br>SHOWCASE.</h2></div>
+      <p class="section-note">Concept projects can be replaced with your real client work as ADAMVEX grows.</p>
+    </div>
+    <div class="work-grid">
+      <a class="project" href="#">
+        <div class="project-visual"></div>
+        <div class="project-info"><small>01 / WEB DESIGN</small><h3>NORTH / STUDIO</h3><p>Minimal architecture experience focused on portfolio, identity and motion.</p></div>
+      </a>
+      <a class="project" href="#">
+        <div class="project-visual" style="background:
+  linear-gradient(135deg,rgba(0,0,0,.25),rgba(0,0,0,.72)),
+  url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85') center/cover"></div>
+        <div class="project-info"><small>02 / BRAND + WEB</small><h3>FORM / ARCHITECTURE</h3><p>A sharper digital identity and portfolio-led website system.</p></div>
+      </a>
+      <a class="project" href="#">
+        <div class="project-visual" style="background:
+  linear-gradient(135deg,rgba(0,0,0,.25),rgba(0,0,0,.72)),
+  url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=85') center/cover"></div>
+        <div class="project-info"><small>03 / STRATEGY</small><h3>ATLAS / CONSULTING</h3><p>A credible digital presence designed to communicate expertise.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap reveal">
+    <div class="section-top">
+      <div><div class="eyebrow">03 / The process</div><h2>FROM IDEA<br>TO LAUNCH.</h2></div>
+      <p class="section-note">Clear stages. No disappearing. No mystery about what happens next.</p>
+    </div>
+    <div class="process">
+      <div class="step"><strong>01 / DISCOVER</strong><h3>Foundation</h3><p>Understand the business, audience and objective.</p></div>
+      <div class="step"><strong>02 / DESIGN</strong><h3>Direction</h3><p>Shape the structure, visuals and user experience.</p></div>
+      <div class="step"><strong>03 / BUILD</strong><h3>Development</h3><p>Code, content, responsive layouts and testing.</p></div>
+      <div class="step"><strong>04 / LAUNCH</strong><h3>Handoff</h3><p>Launch the project and make sure you can run it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap reveal contact">
+    <div class="contact-copy">
+      <div class="eyebrow">04 / Start something</div>
+      <h2>HAVE AN<br>IDEA?<br>LET'S BUILD IT.</h2>
+      <p>Tell ADAMVEX what you're trying to create. We'll take it from there.</p>
+      <a class="btn" style="margin-top:25px" href="https://wa.me/918886767275?text=Hi%20ADAMVEX%2C%20I%27d%20like%20to%20start%20a%20project." target="_blank" rel="noopener">MESSAGE ON WHATSAPP ↗</a>
+    </div>
+    <form class="contact-card" id="contactForm">
+      <div class="field"><label>Name</label><input id="name" required></div>
+      <div class="field"><label>Email</label><input id="email" type="email" required></div>
+      <div class="field"><label>Service</label><select id="need"><option>Website Development</option><option>Video Editing</option><option>Branding & Design</option><option>Ads & Digital Content</option><option>Something else</option></select></div>
+      <div class="field"><label>Project details</label><textarea id="details" placeholder="Tell us what you're building..."></textarea></div>
+      <button class="btn" type="submit">SEND PROJECT DETAILS ↗</button>
+    </form>
+  </div>
+</section>
+
+
+<section class="location-section" id="location">
+  <div class="location-grid">
+    <div class="location-copy">
+      <div class="eyebrow">BUSINESS LOCATION</div>
+      <h2>SHOW US<br><span>WHERE YOU ARE.</span></h2>
+      <p>Tell us where your business is based. We’ll use the location to understand your market and plan the right digital direction for your project.</p>
+      <div class="location-input-row">
+        <input id="businessLocation" type="text" placeholder="City, area or full business address">
+        <button id="showMap" type="button">SHOW ON MAP →</button>
+      </div>
+      <p class="location-note">Your location is included in the WhatsApp project brief so our team knows where your business operates.</p>
+    </div>
+    <div class="map-frame">
+      <iframe id="businessMap" title="Business location map" loading="lazy"
+        src="https://www.google.com/maps?q=India&output=embed"></iframe>
+      <div class="map-overlay">LOCATION PREVIEW</div>
+    </div>
+  </div>
+</section>
+
+<section class="partnerships" id="partnerships"><div class="partnership-inner"><div class="partnership-copy"><div class="eyebrow">PARTNERSHIPS</div><h2>LET’S BUILD<br><span>TOGETHER.</span></h2><p>Have a business, brand, or idea you think we could build together? Tell us about it on WhatsApp. Share what you do, what you’re looking for, and how you think we could work together.</p><p>We’ll take a look, discuss the opportunity, and if it feels like the right fit, we’ll work out the details and close a deal.</p><p class="partnership-note">No pressure if we need some time to think — every partnership deserves the right decision.</p><a class="partnership-btn" href="https://wa.me/918886767275?text=Hi%20ADAMVEX%2C%20I%27m%20interested%20in%20a%20partnership.%20Here%27s%20what%20my%20business%20does%3A%20" target="_blank" rel="noopener">START A PARTNERSHIP <span>→</span></a></div><div class="partnership-card"><div class="card-label">PARTNER WITH ADAMVEX</div><div class="card-icon">↗</div><div class="card-title">YOUR BUSINESS.<br>OUR VISION.</div><div class="card-footer">WHATSAPP • BUSINESS • COLLABORATION</div></div></div></section>
+
+<!-- ADDED: PROJECT CALCULATOR -->
+<section id="calculator" class="av-extra-section">
+  <div class="av-extra-inner">
+    <div class="av-extra-kicker">PROJECT CALCULATOR</div>
+    <div class="av-extra-head">
+      <h2>GET A QUICK<br><span>ESTIMATE.</span></h2>
+      <p>Pick what you need and get a simple starting estimate. Final pricing is confirmed after we understand the project.</p>
+    </div>
+
+    <div class="av-calc">
+      <div class="av-calc-options">
+        <label class="av-option"><input type="checkbox" data-price="2999" value="Website Development"><span><b>Website Development</b><small>Custom business / portfolio website</small></span><strong>₹12k+</strong></label>
+        <label class="av-option"><input type="checkbox" data-price="999" value="Video Editing"><span><b>Video Editing</b><small>Short-form, reels & brand content</small></span><strong>₹6k+</strong></label>
+        <label class="av-option"><input type="checkbox" data-price="1499" value="Branding & Design"><span><b>Branding & Design</b><small>Identity, graphics & visual direction</small></span><strong>₹5k+</strong></label>
+        <label class="av-option"><input type="checkbox" data-price="1999" value="Ads & Digital Content"><span><b>Ads & Digital Content</b><small>Creative assets & campaign support</small></span><strong>₹8k+</strong></label>
+      </div>
+      <div class="av-calc-total">
+        <span>ESTIMATED STARTING RANGE</span>
+        <div id="avTotal">₹0+</div>
+        <p>This is an estimate, not a final quote.</p>
+        <button type="button" id="avCalcCta">START MY PROJECT →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER ONLY -->
+<section id="founder" class="av-extra-section av-founder">
+  <div class="av-extra-inner">
+    <div class="av-extra-kicker">FOUNDER</div>
+    <div class="av-founder-grid">
+      <div>
+        <h2>THE<br><span>FOUNDER.</span></h2>
+      </div>
+      <div class="av-founder-copy">
+        <p class="av-founder-lead">AVISHAI TEJ RACHURI AKA ADAM</p>
+        <p class="av-founder-sign">FOUNDER · ADAMVEX</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PREMIUM ADDITIONS -->
+<section id="process3d" class="av3d-section">
+  <div class="av3d-inner">
+    <div class="av3d-copy">
+      <div class="av3d-kicker">THE ADAMVEX METHOD</div>
+      <h2>FROM IDEA<br><span>TO IMPACT.</span></h2>
+      <p>We turn a rough idea into something people can actually see, use and remember.</p>
+    </div>
+    <div class="av3d-stage" aria-label="ADAMVEX 3D process animation">
+      <div class="av-orbit orbit-a"></div>
+      <div class="av-orbit orbit-b"></div>
+      <div class="av-cube">
+        <div class="face front">AV</div><div class="face back">BUILD</div>
+        <div class="face right">CREATE</div><div class="face left">SCALE</div>
+        <div class="face top">IDEAS</div><div class="face bottom">ADAMVEX</div>
+      </div>
+      <div class="av3d-label">IDEA → DESIGN → BUILD → LAUNCH</div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" class="av3d-section av-dark">
+  <div class="av3d-inner">
+    <div class="av3d-kicker">SIMPLE PACKAGES</div>
+    <div class="av3d-heading"><h2>CHOOSE YOUR<br><span>LEVEL.</span></h2><p>Founder-friendly starting prices while we're building our portfolio. Bigger builds are quoted around your exact requirements.</p></div>
+    <div class="av-pack-grid av-pack-grid-four">
+      <article class="av-pack"><span>01 / STARTER</span><h3>GET ONLINE.</h3><div class="av-price">₹3,999+</div><p>A clean digital presence for a new idea or small business.</p><ul><li>Custom landing page</li><li>Mobile responsive</li><li>Contact / WhatsApp setup</li><li>Basic SEO structure</li></ul><button data-scroll="#contact">START HERE →</button></article>
+
+      <article class="av-pack featured"><span>02 / BUSINESS</span><h3>LOOK SERIOUS.</h3><div class="av-price">₹7,999+</div><p>A stronger multi-page website built around your business.</p><ul><li>Multi-page website</li><li>Custom design system</li><li>Forms & integrations</li><li>Analytics-ready setup</li></ul><button data-scroll="#contact">BUILD THIS →</button></article>
+
+      <article class="av-pack"><span>03 / PREMIUM</span><h3>STAND OUT.</h3><div class="av-price">₹9,999+</div><p>A high-end website with richer interactions and creative direction.</p><ul><li>Premium custom UI</li><li>Advanced animations</li><li>Branding direction</li><li>Launch support</li></ul><button data-scroll="#contact">LET'S TALK →</button></article>
+
+      <article class="av-pack av-ultra"><span>04 / PREMIUM ULTRA</span><h3>ENTER THE 3D.</h3><div class="av-price">₹19,999+</div><p>A cinematic, immersive website with custom 3D visuals and advanced motion.</p><ul><li>Interactive 3D hero</li><li>Scroll-based animations</li><li>Custom 3D objects / scenes</li><li>Premium interactions</li><li>Performance-focused build</li></ul><button data-scroll="#contact">BUILD ULTRA →</button></article>
+    </div>
+    <div class="av-ultra-note"><b>PREMIUM ULTRA 3D</b> — We can help design and build this experience from the concept through launch. Complex 3D scenes may require additional time and a custom quote.</div>
+  </div>
+</section>
+
+
+<section id="ultra3d" class="av3d-section av-ultra-showcase">
+  <div class="av3d-inner">
+    <div class="av3d-kicker">PREMIUM ULTRA / 3D EXPERIENCES</div>
+    <div class="av3d-heading"><h2>MAKE THEM<br><span>STOP.</span></h2><p>Not every business needs 3D. But when the idea calls for something unforgettable, we can build an immersive digital experience around it.</p></div>
+    <div class="av-ultra-demo">
+      <div class="av-demo-orb"></div>
+      <div class="av-demo-ring r1"></div><div class="av-demo-ring r2"></div><div class="av-demo-ring r3"></div>
+      <div class="av-demo-core"><span>AV</span><small>ULTRA</small></div>
+      <div class="av-demo-caption">INTERACTIVE 3D / MOTION / WEB</div>
+    </div>
+    <div class="av-ultra-points">
+      <div><b>01</b><span>3D HERO</span><small>Immersive opening scene designed around your brand.</small></div>
+      <div><b>02</b><span>MOTION</span><small>Scroll-driven movement and cinematic transitions.</small></div>
+      <div><b>03</b><span>INTERACTION</span><small>Objects and sections respond to the visitor.</small></div>
+      <div><b>04</b><span>OPTIMIZATION</span><small>Built carefully so the experience stays usable.</small></div>
+    </div>
+  </div>
+</section>
+<section id="faq" class="av3d-section">
+  <div class="av3d-inner av-faq-layout">
+    <div><div class="av3d-kicker">QUESTIONS, ANSWERED</div><h2>GOOD TO<br><span>KNOW.</span></h2></div>
+    <div class="av-faq">
+      <details><summary>How much does a website cost?</summary><p>Projects vary by scope. Use the calculator above for a starting estimate, then contact us for a final quote.</p></details>
+      <details><summary>How long does a project take?</summary><p>It depends on the size and complexity. We'll agree on the timeline before work begins.</p></details>
+      <details><summary>Can you redesign an existing website?</summary><p>Yes. We can improve the design, structure, responsiveness and overall user experience.</p></details>
+      <details><summary>Do you work with businesses outside India?</summary><p>Yes. ADAMVEX can work with clients remotely, with project details agreed before starting.</p></details>
+      <details><summary>How do I start?</summary><p>Tell us what you're building through the Start a Project form or WhatsApp. We'll review the idea and discuss the next step.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>ADAMVEX — IDEAS INTO DIGITAL.</span>
+    <span>© 2026 ADAMVEX</span>
+  </div>
+</footer>
+
+<script>
+const form=document.getElementById('contactForm');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const msg=`Hi ADAMVEX, I'd like to start a project.\n\nName: ${name.value}\nEmail: ${email.value}\nService: ${need.value}\n\nDetails: ${details.value}`;
+  window.open('https://wa.me/918886767275?text='+encodeURIComponent(msg),'_blank');
+});
+const obs=new IntersectionObserver(entries=>entries.forEach(x=>x.isIntersecting&&x.target.classList.add('show')),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+</script>
+
+<script>
+(function(){
+  const loc=document.getElementById('businessLocation');
+  const btn=document.getElementById('showMap');
+  const map=document.getElementById('businessMap');
+  const projectLoc=document.getElementById('projectLocation');
+  if(!loc||!btn||!map) return;
+  function updateMap(){
+    const value=loc.value.trim();
+    if(!value) return;
+    map.src='https://www.google.com/maps?q='+encodeURIComponent(value)+'&output=embed';
+    if(projectLoc) projectLoc.value=value;
+  }
+  btn.addEventListener('click',updateMap);
+  loc.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();updateMap();}});
+})();
+</script>
+
+
+<button id="backToTop" aria-label="Back to top">↑</button>
+<style>
+#backToTop{
+  position:fixed;right:24px;bottom:24px;z-index:9999;
+  width:52px;height:52px;border:1px solid rgba(255,255,255,.22);
+  border-radius:50%;background:rgba(10,10,14,.78);color:#fff;
+  font-size:22px;cursor:pointer;backdrop-filter:blur(12px);
+  opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s ease;
+}
+#backToTop.show{opacity:1;transform:none;pointer-events:auto}
+</style>
+<script>
+(function(){
+ const b=document.getElementById('backToTop');
+ window.addEventListener('scroll',()=>b.classList.toggle('show',scrollY>500));
+ b.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+})();
+</script>
+
+
+<script id="av-calculator-script">
+(function(){
+  const boxes=[...document.querySelectorAll('#calculator input[type="checkbox"]')];
+  const total=document.getElementById('avTotal');
+  function update(){
+    const sum=boxes.filter(x=>x.checked).reduce((a,x)=>a+Number(x.dataset.price||0),0);
+    total.textContent='₹'+sum.toLocaleString('en-IN')+'+';
+  }
+  boxes.forEach(x=>x.addEventListener('change',update));
+  update();
+  const cta=document.getElementById('avCalcCta');
+  if(cta) cta.addEventListener('click',()=>{
+    const selected=boxes.filter(x=>x.checked).map(x=>x.value).join(', ')||'Not selected yet';
+    const estimate=total.textContent;
+    const msg=`Hi ADAMVEX! I want to start a project.%0A%0AServices: ${encodeURIComponent(selected)}%0AEstimated starting range: ${encodeURIComponent(estimate)}`;
+    window.open('https://wa.me/918886767275?text='+msg,'_blank');
+  });
+})();
+</script>
+
+
+<script id="adamvex-premium-script">
+document.querySelectorAll('[data-scroll]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const el=document.querySelector(btn.getAttribute('data-scroll'));
+    if(el) el.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+
+<div id="avProgress"></div><a class="avSticky" href="#start-project">Start a Project →</a>
+<section class="avReveal" style="padding:70px 0">
+<div class="av3d avTilt">
+<div class="avRing r1"></div><div class="avRing r2"></div><div class="avRing r3"></div><div class="avOrb"></div>
+<div style="position:absolute;left:28px;bottom:24px;max-width:390px"><small>03D EXPERIENCE LAB</small><h2>Make your website feel alive.</h2><p>Interactive depth, motion and premium 3D-style visuals built around your brand.</p></div>
+</div></section>
+<script>
+(()=>{const p=document.getElementById('avProgress');addEventListener('scroll',()=>{let m=document.documentElement.scrollHeight-innerHeight;p.style.width=(m?scrollY/m*100:0)+'%'},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.avReveal').forEach(e=>io.observe(e));
+document.querySelectorAll('.avTilt').forEach(c=>{c.onpointermove=e=>{let r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.transform=`perspective(900px) rotateX(${(y/r.height-.5)*-7}deg) rotateY(${(x/r.width-.5)*7}deg)`};c.onpointerleave=()=>c.style.transform=''})})();
+</script>
+<!-- ADAMVEX Launch -->
+<div class="avx-launch" id="avxLaunch"><div class="avx-launch-logo">AV<span>ADAMVEX / DIGITAL STUDIO</span></div></div>
+
+<section class="avx-section avx-reveal">
+  <div class="avx-label">THE ADAMVEX DIFFERENCE</div>
+  <div class="avx-grid">
+    <article class="avx-card avx-tilt" data-avx-tilt><span class="avx-pill">01 / STRATEGY</span><h3>Start with the idea.</h3><p>We shape the goal, audience and direction before worrying about flashy effects.</p></article>
+    <article class="avx-card avx-tilt" data-avx-tilt><span class="avx-pill">02 / EXPERIENCE</span><h3>Make it memorable.</h3><p>Motion, depth and clean interaction give the brand a distinct digital presence.</p></article>
+    <article class="avx-card avx-tilt" data-avx-tilt><span class="avx-pill">03 / ACTION</span><h3>Make it useful.</h3><p>Every important page gets a clear next step—contact, enquiry, booking or purchase.</p></article>
+  </div>
+</section>
+
+<section class="avx-section avx-reveal" id="quote-builder">
+  <div class="avx-label">SMART QUOTE BUILDER</div>
+  <h2>Build your project.</h2>
+  <div class="avx-card avx-quote">
+    <div><label>Service</label><select id="avxService"><option value="Website Development" data-price="2999">Website Development — ₹2,999+</option><option value="Video Editing" data-price="999">Video Editing — ₹999+</option><option value="Branding & Design" data-price="1499">Branding & Design — ₹1,499+</option><option value="Ads & Digital Content" data-price="1999">Ads & Digital Content — ₹1,999+</option><option value="Premium Ultra 3D Website" data-price="19999">Premium Ultra 3D Website — ₹19,999+</option></select></div>
+    <div><label>Complexity</label><select id="avxComplexity"><option value="1">Starter ×1</option><option value="1.5">Business ×1.5</option><option value="2">Premium ×2</option><option value="3">Ultra ×3</option></select></div>
+    <div><label>Project name</label><input id="avxProject" placeholder="Your business / idea"></div>
+    <div><label>Location</label><input id="avxLocation" placeholder="City, country"></div>
+    <div class="avx-total">Estimated starting point: <strong id="avxTotal">₹2,999+</strong></div>
+    <button id="avxQuoteSend">SEND PROJECT BRIEF →</button>
+  </div>
+</section>
+
+
+<section id="assistant" class="avx-section avx-reveal avx-ai-section">
+  <div class="avx-label">ADAMVEX AI PROJECT ASSISTANT</div>
+  <div class="avx-ai-head">
+    <div>
+      <h2>YOUR IDEA.<br><span>FIGURED OUT.</span></h2>
+      <p>Describe what you want to build. This assistant runs directly in your browser — no API key, no login and no backend.</p>
+    </div>
+    <div class="avx-ai-badge">NO API<br><strong>100%</strong></div>
+  </div>
+  <div class="avx-ai-box">
+    <div class="avx-ai-prompt">
+      <label for="avxIdeaFree">TELL ADAMVEX WHAT YOU NEED</label>
+      <textarea id="avxIdeaFree" placeholder="Example: I have a clothing brand and need a premium website..."></textarea>
+      <div class="avx-ai-actions">
+        <button type="button" id="avxAiBuild">BUILD MY PLAN →</button>
+        <button type="button" class="avx-ai-example" data-example="I need a website for my small business">TRY AN EXAMPLE</button>
+      </div>
+    </div>
+    <div id="avxAiResult" class="avx-ai-result">
+      <span class="avx-ai-dot"></span>
+      <div><strong>READY.</strong><p>Tell me your idea and I'll recommend the best ADAMVEX direction.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="avx-section avx-reveal">
+  <div class="avx-label">PORTFOLIO / CASE STUDIES</div>
+  <div class="avx-grid">
+    <article class="avx-card avx-case avx-tilt" data-avx-tilt><span class="avx-pill">CASE STUDY 01</span><h3>ADAMVEX — Own brand</h3><p>Our own digital presence is the first laboratory for design, motion and conversion experiments.</p></article>
+    <article class="avx-card avx-case avx-tilt" data-avx-tilt><span class="avx-pill">CASE STUDY 02</span><h3>Client stories coming soon.</h3><p>Real client results will replace this placeholder as projects launch. No invented numbers.</p></article>
+    <article class="avx-card avx-case avx-tilt" data-avx-tilt><span class="avx-pill">CASE STUDY 03</span><h3>Your business could be next.</h3><p>Bring an idea, and we'll turn the strongest parts into a clear digital experience.</p></article>
+  </div>
+</section>
+
+<section class="avx-section avx-reveal">
+  <div class="avx-label">BUILD WITHOUT BORDERS</div>
+  <div class="avx-globe avx-tilt" data-avx-tilt>
+    <div class="avx-globe-core"></div>
+    <div style="position:absolute;text-align:center;margin-top:280px"><strong>INDIA → WORLDWIDE</strong><br><small style="opacity:.6">Digital work can travel anywhere.</small></div>
+  </div>
+</section>
+
+<div class="avx-chat" id="avxChat">
+  <strong>ADAMVEX AI PROJECT ASSISTANT</strong>
+  <p style="opacity:.6;font-size:.85rem">Describe your business or website idea. I'll turn it into a project brief.</p>
+  <textarea id="avxIdea" placeholder="Example: I run a clothing brand and need a premium website..."></textarea>
+  <button id="avxGenerate">GENERATE BRIEF →</button>
+  <div id="avxResult" style="margin-top:12px;opacity:.8"></div>
+</div>
+<button class="avx-chat-fab" id="avxChatFab">AI PROJECT ASSISTANT ✦</button>
+
+<script>
+(() => {
+  const launch=document.getElementById('avxLaunch');
+  setTimeout(()=>launch&&launch.classList.add('hide'),1100);
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.avx-reveal').forEach(e=>{e.style.opacity='0';e.style.transform='translateY(28px)';e.style.transition='.8s ease';io.observe(e)});
+  const style=document.createElement('style');style.textContent='.avx-reveal.show{opacity:1!important;transform:none!important}';document.head.appendChild(style);
+
+  document.querySelectorAll('[data-avx-tilt]').forEach(c=>{
+    c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.transform=`perspective(900px) rotateX(${(y/r.height-.5)*-6}deg) rotateY(${(x/r.width-.5)*6}deg)`});
+    c.addEventListener('pointerleave',()=>c.style.transform='');
+  });
+
+  const service=document.getElementById('avxService'), complexity=document.getElementById('avxComplexity'), total=document.getElementById('avxTotal');
+  function calc(){const p=Number(service?.selectedOptions[0]?.dataset.price||0),m=Number(complexity?.value||1);total.textContent='₹'+Math.round(p*m).toLocaleString('en-IN')+'+'}
+  service?.addEventListener('change',calc);complexity?.addEventListener('change',calc);
+  document.getElementById('avxQuoteSend')?.addEventListener('click',()=>{
+    const msg=`ADAMVEX PROJECT BRIEF%0AService: ${service.value}%0AComplexity: ${complexity.value}x%0AProject: ${document.getElementById('avxProject').value||'Not specified'}%0ALocation: ${document.getElementById('avxLocation').value||'Not specified'}%0AEstimated starting point: ${total.textContent}`;
+    window.open('https://wa.me/918886767275?text='+msg,'_blank');
+  });
+
+  const chat=document.getElementById('avxChat');document.getElementById('avxChatFab')?.addEventListener('click',()=>chat.classList.toggle('open'));
+  document.getElementById('avxGenerate')?.addEventListener('click',()=>{
+    const idea=document.getElementById('avxIdea').value.trim();
+    const result=document.getElementById('avxResult');
+    if(!idea){result.textContent='Write your idea first.';return}
+    result.innerHTML='<strong>Suggested brief</strong><br>Goal: '+idea+'<br><br>Recommended: clear landing page + strong CTA + mobile-first design + brand visuals. Final scope and price should be confirmed with ADAMVEX.';
+  });
+})();
+</script>
+
+<script id="adamvex-api-free-ai-script">
+(() => {
+  const input=document.getElementById('avxIdeaFree'), result=document.getElementById('avxAiResult'), button=document.getElementById('avxAiBuild'), example=document.querySelector('.avx-ai-example');
+  if(!input||!result||!button)return;
+  function analyze(text){
+    const t=text.toLowerCase(), hits=[];
+    if(/website|web site|landing page|portfolio|online store|shop|ecommerce|e-commerce/.test(t))hits.push('Website Development');
+    if(/video|reel|editing|youtube|shorts|motion/.test(t))hits.push('Video Editing');
+    if(/logo|brand|branding|identity|visual/.test(t))hits.push('Branding & Design');
+    if(/ad|ads|advert|campaign|marketing|social media/.test(t))hits.push('Ads & Digital Content');
+    if(/3d|three dimensional|immersive|interactive/.test(t))hits.push('Premium Ultra 3D');
+    if(!hits.length)hits.push('Website Development');
+    let direction='Start with a clean, mobile-first digital presence and a strong call to action.';
+    if(/clothing|fashion|apparel/.test(t))direction='Lead with a premium brand story, product visuals, collections and a fast mobile shopping journey.';
+    else if(/restaurant|cafe|food/.test(t))direction='Lead with strong visuals, menu access, location/contact details and an easy booking or enquiry path.';
+    else if(/school|student|education/.test(t))direction='Lead with clear information architecture, trust signals, programs and an easy enquiry flow.';
+    else if(/agency|service/.test(t))direction='Lead with clear services, proof of work, a strong value proposition and a direct enquiry CTA.';
+    if(/3d|immersive/.test(t))direction+=' Add controlled 3D motion where it improves the experience, not just for decoration.';
+    return {hits,direction};
+  }
+  button.addEventListener('click',()=>{
+    const text=input.value.trim();
+    if(!text){result.innerHTML='<span class="avx-ai-dot"></span><div><strong>GIVE ME AN IDEA.</strong><p>Write a few words about your project.</p></div>';return;}
+    const a=analyze(text);
+    result.innerHTML='<span class="avx-ai-dot"></span><div><strong>PROJECT DIRECTION</strong><p>'+a.direction+'</p><ul>'+a.hits.map(x=>'<li>'+x+'</li>').join('')+'</ul><p><b>Next:</b> use the existing calculator/quote tools below to continue.</p></div>';
+  });
+  example?.addEventListener('click',()=>{input.value=example.dataset.example;input.focus();});
+})();
+</script>
+
+
+
+<section class="avx-section avx-reviews-section" id="reviews">
+  <div class="avx-section-head">
+    <span class="avx-kicker">CUSTOMER VOICE</span>
+    <h2>REVIEWS &amp; RATINGS</h2>
+    <p>Real feedback from people who have worked with ADAMVEX. No fake reviews.</p>
+  </div>
+
+  <div class="avx-review-top">
+    <div class="avx-rating-summary">
+      <div class="avx-rating-number" id="avxAverageRating">0.0</div>
+      <div class="avx-stars-static" id="avxAverageStars">☆☆☆☆☆</div>
+      <div class="avx-review-count" id="avxReviewCount">0 reviews</div>
+    </div>
+    <div class="avx-rating-note">Ratings are saved in this browser for this API-free demo.</div>
+  </div>
+
+  <div class="avx-review-layout">
+    <div class="avx-card avx-review-form">
+      <div class="avx-card-label">LEAVE A REVIEW</div>
+      <input id="avxReviewName" type="text" maxlength="60" placeholder="Your name">
+      <div class="avx-star-picker" id="avxStarPicker" aria-label="Choose a rating">
+        <button type="button" data-rating="1" aria-label="1 star">☆</button>
+        <button type="button" data-rating="2" aria-label="2 stars">☆</button>
+        <button type="button" data-rating="3" aria-label="3 stars">☆</button>
+        <button type="button" data-rating="4" aria-label="4 stars">☆</button>
+        <button type="button" data-rating="5" aria-label="5 stars">☆</button>
+      </div>
+      <textarea id="avxReviewText" maxlength="500" placeholder="Tell us about your experience..."></textarea>
+      <button class="avx-btn" type="button" id="avxSubmitReview">SUBMIT REVIEW →</button>
+      <p class="avx-review-disclaimer">Please submit only genuine feedback. Reviews are stored locally on this device in this API-free version.</p>
+    </div>
+
+    <div class="avx-review-list" id="avxReviewList">
+      <div class="avx-card avx-empty-reviews" id="avxEmptyReviews">
+        <div class="avx-card-label">NO REVIEWS YET</div>
+        <p>Be the first to leave genuine feedback.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="avx-section" id="care">
+  <div class="avx-section-head">
+    <span class="avx-kicker">SUPPORT</span>
+    <h2>CUSTOMER CARE</h2>
+    <p>Need help with a project, website, edit, branding job, or anything else? Reach out to ADAMVEX.</p>
+  </div>
+  <div class="avx-grid-2">
+    <div class="avx-card">
+      <div class="avx-card-label">CUSTOMER CARE NUMBER</div>
+      <a class="avx-big-link" href="tel:+918886767275">+91 88867 67275</a>
+      <p>Call or WhatsApp us for project support and enquiries.</p>
+      <a class="avx-btn" href="https://wa.me/918886767275?text=Hi%20ADAMVEX%2C%20I%20need%20customer%20care%20support.">WHATSAPP SUPPORT →</a>
+    </div>
+    <div class="avx-card">
+      <div class="avx-card-label">PRIVACY</div>
+      <h3>Your privacy matters.</h3>
+      <p>Read how ADAMVEX handles information submitted through this website.</p>
+      <a class="avx-btn avx-btn-secondary" href="#privacy">READ PRIVACY POLICY →</a>
+    </div>
+  </div>
+</section>
+
+<section class="avx-section avx-privacy" id="privacy">
+  <div class="avx-section-head">
+    <span class="avx-kicker">LEGAL</span>
+    <h2>PRIVACY POLICY</h2>
+    <p>Last updated: September 2026</p>
+  </div>
+  <div class="avx-card">
+    <h3>1. Information we receive</h3>
+    <p>When you contact ADAMVEX or submit a project enquiry, you may choose to provide information such as your name, business details, contact information, project requirements, budget, and business location.</p>
+
+    <h3>2. How we use information</h3>
+    <p>We use information you provide to respond to enquiries, discuss projects, provide requested services, and communicate with you about your request.</p>
+
+    <h3>3. WhatsApp and external services</h3>
+    <p>Some contact buttons may open WhatsApp or other external services. Those services have their own privacy policies and terms. Information you send through them is handled according to those services' policies as well as the information you choose to share with ADAMVEX.</p>
+
+    <h3>4. Cookies and analytics</h3>
+    <p>ADAMVEX does not intentionally collect sensitive personal information through this website. If analytics, cookies, maps, fonts, images, or other third-party resources are added later, their respective providers may process technical information according to their own policies.</p>
+
+    <h3>5. Data sharing</h3>
+    <p>We do not sell personal information. Information may be shared only when necessary to provide a requested service, use a service you chose to interact with, comply with applicable law, or protect the website and its users.</p>
+
+    <h3>6. Data security</h3>
+    <p>We take reasonable steps to protect information submitted to us, but no internet transmission or storage system can be guaranteed completely secure.</p>
+
+    <h3>7. Your choices</h3>
+    <p>You can choose what information to provide when contacting us. For questions about information you have submitted, contact ADAMVEX through the customer care details on this website.</p>
+
+    <h3>8. Policy updates</h3>
+    <p>This policy may be updated when the website, services, or applicable requirements change. The latest version will be posted on this page.</p>
+
+    <h3>9. Contact</h3>
+    <p>Customer Care: <a href="tel:+918886767275">+91 88867 67275</a><br>
+    Email: <a href="mailto:adamvex.developments@gmail.com">adamvex.developments@gmail.com</a></p>
+  </div>
+</section>
+
+
+
+
+
+<script>
+(function(){
+  const key = "adamvex_reviews_v1";
+  let reviews = [];
+  let selectedRating = 0;
+
+  try { reviews = JSON.parse(localStorage.getItem(key) || "[]"); } catch(e) { reviews = []; }
+
+  const picker = document.getElementById("avxStarPicker");
+  const nameInput = document.getElementById("avxReviewName");
+  const textInput = document.getElementById("avxReviewText");
+  const submit = document.getElementById("avxSubmitReview");
+  const list = document.getElementById("avxReviewList");
+  const empty = document.getElementById("avxEmptyReviews");
+  const avg = document.getElementById("avxAverageRating");
+  const avgStars = document.getElementById("avxAverageStars");
+  const count = document.getElementById("avxReviewCount");
+
+  function stars(n){
+    return "★".repeat(n) + "☆".repeat(5-n);
+  }
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, m => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    }[m]));
+  }
+  function render(){
+    const total = reviews.length;
+    const average = total ? reviews.reduce((a,r)=>a+r.rating,0)/total : 0;
+    avg.textContent = average.toFixed(1);
+    avgStars.textContent = stars(Math.round(average));
+    count.textContent = total + (total === 1 ? " review" : " reviews");
+    list.innerHTML = "";
+    if(!total){
+      list.appendChild(empty.cloneNode(true));
+      return;
+    }
+    reviews.slice().reverse().forEach(r=>{
+      const card = document.createElement("div");
+      card.className = "avx-card avx-review-item";
+      card.innerHTML =
+        '<div class="avx-review-head"><div><div class="avx-review-name">'+esc(r.name)+'</div><div class="avx-review-date">'+esc(r.date)+'</div></div><div class="avx-review-stars">'+stars(r.rating)+'</div></div>'+
+        '<p class="avx-review-body">'+esc(r.text)+'</p>';
+      list.appendChild(card);
+    });
+  }
+  if(picker){
+    picker.querySelectorAll("button").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        selectedRating = Number(btn.dataset.rating);
+        picker.querySelectorAll("button").forEach(b=>b.classList.toggle("active", Number(b.dataset.rating)<=selectedRating));
+        picker.querySelectorAll("button").forEach(b=>b.textContent=Number(b.dataset.rating)<=selectedRating?"★":"☆");
+      });
+    });
+  }
+  if(submit){
+    submit.addEventListener("click",()=>{
+      const name = nameInput.value.trim();
+      const text = textInput.value.trim();
+      if(!name || !text || !selectedRating){
+        alert("Please enter your name, review, and choose a star rating.");
+        return;
+      }
+      reviews.push({name:name, text:text, rating:selectedRating, date:new Date().toLocaleDateString()});
+      try { localStorage.setItem(key, JSON.stringify(reviews)); } catch(e) {}
+      nameInput.value = "";
+      textInput.value = "";
+      selectedRating = 0;
+      picker.querySelectorAll("button").forEach(b=>{b.classList.remove("active");b.textContent="☆";});
+      render();
+    });
+  }
+  render();
+})();
+</script>
+
+
+<section class="avx-section avx-legal-section" id="terms">
+  <div class="avx-section-head">
+    <span class="avx-kicker">LEGAL</span>
+    <h2>TERMS &amp; CONDITIONS</h2>
+    <p>Simple service terms for ADAMVEX clients.</p>
+  </div>
+  <div class="avx-card avx-legal-card">
+    <h3>1. Services</h3>
+    <p>ADAMVEX provides digital services such as website development, video editing, branding, design, and digital advertising. Exact deliverables are agreed before work begins.</p>
+    <h3>2. Quotes &amp; payments</h3>
+    <p>Prices shown on the website are starting prices unless a quote says otherwise. A project may require an advance payment before work begins. Final pricing depends on the agreed scope.</p>
+    <h3>3. Revisions</h3>
+    <p>Revisions are handled according to the package or project agreement. Requests outside the agreed scope may require an additional quote.</p>
+    <h3>4. Client responsibilities</h3>
+    <p>Clients are responsible for providing accurate content, logos, images, access, approvals, and other materials needed for their project.</p>
+    <h3>5. Timelines</h3>
+    <p>Estimated timelines depend on project scope and how quickly required content, feedback, and approvals are provided.</p>
+    <h3>6. Cancellations</h3>
+    <p>Cancellation and refund terms should be agreed in writing before a project begins. Work already completed may be chargeable.</p>
+    <h3>7. Third-party services</h3>
+    <p>Domains, hosting, payment providers, WhatsApp, maps, fonts, plugins, and other third-party services may have separate terms and fees.</p>
+    <h3>8. Ownership</h3>
+    <p>Ownership or usage rights for final project assets are transferred according to the specific project agreement and payment status.</p>
+    <h3>9. Changes</h3>
+    <p>These terms may be updated as ADAMVEX services develop. The latest version will be shown on this page.</p>
+    <h3>10. Contact</h3>
+    <p>Email: <a href="mailto:adamvex.developments@gmail.com">adamvex.developments@gmail.com</a><br>Customer Care: <a href="tel:+918886767275">+91 88867 67275</a></p>
+  </div>
+</section>
+
+
+<section class="avx-section avx-brief-section" id="brief">
+  <div class="avx-section-head">
+    <span class="avx-kicker">PROJECT DOCUMENT</span>
+    <h2>PROJECT BRIEF</h2>
+    <p>Build a clean project summary from your enquiry. No API required.</p>
+  </div>
+  <div class="avx-brief-layout">
+    <div class="avx-card">
+      <div class="avx-card-label">BRIEF DETAILS</div>
+      <input id="avxBriefClient" type="text" placeholder="Client / business name">
+      <input id="avxBriefService" type="text" placeholder="Service">
+      <input id="avxBriefBudget" type="text" placeholder="Budget">
+      <input id="avxBriefTimeline" type="text" placeholder="Target timeline">
+      <textarea id="avxBriefNeeds" placeholder="Project requirements"></textarea>
+      <button class="avx-btn" type="button" id="avxGenerateBrief">GENERATE PROJECT SUMMARY →</button>
+    </div>
+    <div class="avx-card avx-brief-preview" id="avxBriefPreview">
+      <div class="avx-card-label">PREVIEW</div>
+      <h3>ADAMVEX PROJECT SUMMARY</h3>
+      <p>Fill in the details and generate your project summary.</p>
+    </div>
+  </div>
+</section>
+
+
+<script>
+(function(){
+
+  const check = document.getElementById("avxCheckStatus");
+  const code = document.getElementById("avxStatusCode");
+  const result = document.getElementById("avxStatusResult");
+  if(check){
+    check.addEventListener("click",()=>{
+      const value = code.value.trim();
+      if(!value){ alert("Enter your project code first."); return; }
+      const stages = ["Planning","Design","Development","Review","Completed"];
+      const hash = [...value].reduce((a,c)=>a+c.charCodeAt(0),0);
+      const current = hash % 4; // stays out of Completed unless a real system is connected
+      result.innerHTML =
+
+        '<div class="avx-status-steps">'+stages.map((s,i)=>'<div class="avx-status-step '+(i<=current?'active':'')+'">'+s+'</div>').join('')+'</div>';
+    });
+  }
+
+  // Generate a printable/downloadable project summary locally.
+  const gen = document.getElementById("avxGenerateBrief");
+  if(gen){
+    gen.addEventListener("click",()=>{
+      const client = document.getElementById("avxBriefClient").value.trim() || "Not provided";
+      const service = document.getElementById("avxBriefService").value.trim() || "Not provided";
+      const budget = document.getElementById("avxBriefBudget").value.trim() || "Not provided";
+      const timeline = document.getElementById("avxBriefTimeline").value.trim() || "Not provided";
+      const needs = document.getElementById("avxBriefNeeds").value.trim() || "Not provided";
+      const safe = s => String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+      document.getElementById("avxBriefPreview").innerHTML =
+        '<div class="avx-card-label">GENERATED SUMMARY</div><h3>ADAMVEX PROJECT SUMMARY</h3>'+
+        '<pre>CLIENT / BUSINESS\\n'+safe(client)+'\\n\\nSERVICE\\n'+safe(service)+'\\n\\nBUDGET\\n'+safe(budget)+'\\n\\nTARGET TIMELINE\\n'+safe(timeline)+'\\n\\nREQUIREMENTS\\n'+safe(needs)+'\\n\\nADAMVEX\\nIDEAS INTO DIGITAL</pre>'+
+        '<button class="avx-btn" type="button" id="avxDownloadBrief">DOWNLOAD SUMMARY →</button>';
+      document.getElementById("avxDownloadBrief").onclick=()=>{
+        const text =
+`ADAMVEX PROJECT SUMMARY
+
+CLIENT / BUSINESS
+${client}
+
+SERVICE
+${service}
+
+BUDGET
+${budget}
+
+TARGET TIMELINE
+${timeline}
+
+REQUIREMENTS
+${needs}
+
+ADAMVEX
+IDEAS INTO DIGITAL`;
+        const blob=new Blob([text],{type:"text/plain"});
+        const a=document.createElement("a");
+        a.href=URL.createObjectURL(blob);
+        a.download="ADAMVEX_Project_Summary.txt";
+        a.click();
+        URL.revokeObjectURL(a.href);
+      };
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
